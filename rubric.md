@@ -3,9 +3,9 @@
 
 Listed below are various aspects of the assignment.  When you turn in your work, please indicate the status of each item
 
-_YES__ : indicates that the item is fully complete
-_NO___ : indicates that the item is not attempted
-_PART_ : indicates that the item is attempted but not fully complete
+- **YES**: indicates that the item is fully complete
+- **NO**: indicates that the item is not attempted
+- **PART**: indicates that the item is attempted but not fully complete
 
 ## Test Cases (10 pts, Autograded)
 
