@@ -42,39 +42,9 @@ def main():
     )
 
     # Print a little banner
-    print("-" * 14)
-    print("COMPUTER STORE")
-    print("-" * 14)
-
-    # Then we'll add it to the computer store's inventory
-    print("Buying", computer["description"])
-    print("Adding to inventory...")
-    computer_id = buy(computer)
-    print("Done.\n")
-
-    # Make sure it worked by checking inventory
-    print("Checking inventory...")
-    print_inventory()
-    print("Done.\n")
-
-    # Update price
-    new_price = int(computer["price"] * 0.8) # discount to 80% of original price
-    print("New price for Item ID:", computer_id, "=", new_price)
-    print("Updating inventory...")
-    update_price(computer_id, new_price)
-    print("Done.\n")
-
-    # Make sure it worked by checking inventory
-    print("Checking inventory...")
-    print_inventory()
-    print("Done.\n")
-
-    # We could do the same thing with the resale store:
-
-    # Print another little banner
-    print("-" * 12)
-    print("RESALE STORE")
-    print("-" * 12)
+    print("-" * 21)
+    print("COMPUTER RESALE STORE")
+    print("-" * 21)
 
     # Add it to the resale store's inventory
     print("Buying", computer["description"])
@@ -87,7 +57,7 @@ def main():
     rprint_inventory()
     print("Done.\n")
 
-    # This time, we'll refurbish it
+    # Now, let's refurbish it
     new_OS = "MacOS Monterey"
     print("Refurbishing Item ID:", computer_id, ", updating OS to", new_OS)
     print("Updating inventory...")
