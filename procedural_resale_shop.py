@@ -5,6 +5,8 @@ Description: an example of procedural code to run a small computer resale shop,
              as taught at Smith College in Fall 2022. Based on an example by Sami Islam.
      Author: R. Jordan Crouser (@jcrouser)
        Date: 11 September 2022
+       
+       Note: YOU DO NOT NEED TO MODIFY THIS FILE
 """
 # Import a few useful containers from the typing module
 from typing import Dict, Union, Optional
