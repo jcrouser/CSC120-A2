@@ -2,11 +2,8 @@
 from calendar import c
 from typing import Dict, Union
 
-# Import the functions we wrote in procedural_computer_shop.py
-from procedural_computer_shop import buy, update_price, sell, print_inventory
-
-# # Import the functions we wrote in procedural_resale_shop.py, renaming them with an 'r' prefix
-from procedural_resale_shop import buy as rbuy, update_price as rupdate_price, sell as rsell, print_inventory as rprint_inventory, refurbish
+# Import the functions we wrote in procedural_resale_shop.py
+from procedural_resale_shop import buy, update_price, sell, print_inventory, refurbish
 
 """ This helper function takes in a bunch of information about a computer,
     and packages it up into a python dictionary to make it easier to store
@@ -49,12 +46,12 @@ def main():
     # Add it to the resale store's inventory
     print("Buying", computer["description"])
     print("Adding to inventory...")
-    computer_id = rbuy(computer)
+    computer_id = buy(computer)
     print("Done.\n")
 
     # Make sure it worked by checking inventory
     print("Checking inventory...")
-    rprint_inventory()
+    print_inventory()
     print("Done.\n")
 
     # Now, let's refurbish it
@@ -66,7 +63,16 @@ def main():
 
     # Make sure it worked by checking inventory
     print("Checking inventory...")
-    rprint_inventory()
+    print_inventory()
+    print("Done.\n")
+    
+    # Now, let's sell it!
+    print("Selling Item ID:", computer_id)
+    sell(computer_id)
+    
+    # Make sure it worked by checking inventory
+    print("Checking inventory...")
+    print_inventory()
     print("Done.\n")
 
 # Calls the main() function when this file is run
