@@ -7,8 +7,6 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 - **NO**: indicates that the item is not attempted
 - **PART**: indicates that the item is attempted but not fully complete
 
-## Test Cases (10 pts, Autograded)
-
 ### Level 1 (3 pts)
 
 ____ 1 pt: All expected attributes for `Computer` class are present
