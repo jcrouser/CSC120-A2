@@ -2,20 +2,20 @@
    Filename: procedural_resale_shop.py
 Description: an example of procedural code to run a small computer resale shop,
              part of A2: Object-ification, CSC120: Object-Oriented Programming
-             as taught at Smith College in Fall 2022. Based on an example by Sami Islam.
+             as taught at Smith College in Spring 2024. Based on an example by Sami Islam.
      Author: R. Jordan Crouser (@jcrouser)
-       Date: 11 September 2022
+       Date: 1 February 2024
        
        Note: YOU DO NOT NEED TO MODIFY THIS FILE
 """
 # Import a few useful containers from the typing module
-from typing import Dict, Union, Optional
+from typing import Dict, Optional
 
 """ inventory: a dictionary where we'll store our inventory
     The key is an int representing the item number
     The value is another dictionary containing information about the machine
 """
-inventory : Dict[int, Dict[str, Union[str, int, bool]]] = {}
+inventory : Dict[int, Dict] = {}
 
 itemID = 0 # We'll increment this every time we add a new item 
            # so that we always have a new value for the itemID
@@ -24,7 +24,7 @@ itemID = 0 # We'll increment this every time we add a new item
 Takes in a Dict containing all the information about a computer,
 adds it to the inventory, returns the assigned item_id
 """
-def buy(computer: Dict[str, Union[str, int, bool]]):
+def buy(computer: Dict):
     global itemID
     itemID += 1 # increment itemID
     inventory[itemID] = computer
@@ -80,3 +80,9 @@ def refurbish(item_id: int, new_os: Optional[str] = None):
             computer["operating_system"] = new_os # update details after installing new OS
     else:
         print("Item", item_id, "not found. Please select another item to refurbish.")
+
+def main():
+    buy({"description":"2019 MacBook Pro", "processor_type":"Intel", "hard_drive_capacity":256, "memory":16, "operating_system":"High Sierra", "year_made":2019, "price":1000})
+    print_inventory()
+
+main()
