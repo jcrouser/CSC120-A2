@@ -17,7 +17,7 @@ This repository contains starter code for A2: Object-ification, developed for CS
   
   **Step 2**: Fill in the class definitions in `computer.py` and `oo_resale_shop.py` with the appropriate functionality from the provided procedural code, re-written using Object-Oriented Programming techniques. Consider carefully which classes should be responsible for which behaviors / information:
   - storing information about a specific computer
-  - storing the inventory for the store
+  - storing the inventory for the store 
   - updating a computer's price
   - updating a computer's OS
   - buying a computer (add to inventory)
@@ -27,3 +27,5 @@ This repository contains starter code for A2: Object-ification, developed for CS
  **Step 3**: Be sure to test your code! The items contained in `rubric.md` are a useful guide.
  
 **Step 4**: Fill in `rubric.md` wth your self-assessment and include your reflection on the assignment in `reflection.md`, then submit your repo to Gradescope.
+
+
