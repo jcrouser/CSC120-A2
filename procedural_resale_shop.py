@@ -11,31 +11,23 @@ Description: an example of procedural code to run a small computer resale shop,
 # Import a few useful containers from the typing module
 from typing import Dict, Optional
 
-""" inventory: a dictionary where we'll store our inventory
-    The key is an int representing the item number
-    The value is another dictionary containing information about the machine
-"""
-inventory : Dict[int, Dict] = {}
-
-itemID = 0 # We'll increment this every time we add a new item 
-           # so that we always have a new value for the itemID
+""" inventory: a list where we'll store our inventory """
+inventory : list = []
 
 """
 Takes in a Dict containing all the information about a computer,
 adds it to the inventory, returns the assigned item_id
 """
 def buy(computer: Dict):
-    global itemID
-    itemID += 1 # increment itemID
-    inventory[itemID] = computer
-    return itemID
+    inventory.append(computer)
+    return inventory.index(computer)
 
 """
 Takes in an item_id and a new price, updates the price of the associated
 computer if it is the inventory, prints error message otherwise
 """
 def update_price(item_id: int, new_price: int):
-    if item_id in inventory:
+    if inventory[item_id] is not None:
         inventory[item_id]["price"] = new_price
     else:
         print("Item", item_id, "not found. Cannot update price.")
@@ -45,8 +37,8 @@ Takes in an item_id, removes the associated computer if it is the inventory,
 prints error message otherwise
 """
 def sell(item_id: int):
-    if item_id in inventory:
-        del inventory[item_id]
+    if inventory[item_id] is not None:
+        inventory.pop(item_id)
         print("Item", item_id, "sold!")
     else: 
         print("Item", item_id, "not found. Please select another item to sell.")
@@ -58,14 +50,14 @@ def print_inventory():
     # If the inventory is not empty
     if inventory:
         # For each item
-        for item_id in inventory:
+        for item in inventory:
             # Print its details
-            print(f'Item ID: {item_id} : {inventory[item_id]}')
+            print(f'Item ID: {inventory.index(item)} : {item}')
     else:
         print("No inventory to display.")
 
 def refurbish(item_id: int, new_os: Optional[str] = None):
-    if item_id in inventory:
+    if inventory[item_id] is not None:
         computer = inventory[item_id] # locate the computer
         if int(computer["year_made"]) < 2000:
             computer["price"] = 0 # too old to sell, donation only
