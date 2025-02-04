@@ -2,7 +2,7 @@
    Filename: procedural_resale_shop.py
 Description: an example of procedural code to run a small computer resale shop,
              part of A2: Object-ification, CSC120: Object-Oriented Programming
-             as taught at Smith College in Spring 2024. Based on an example by Sami Islam.
+             as taught at Smith College in Spring 2025. Based on an example by Sami Islam.
      Author: R. Jordan Crouser (@jcrouser)
        Date: 1 February 2024
        
