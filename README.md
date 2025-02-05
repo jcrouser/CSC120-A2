@@ -1,6 +1,6 @@
 # CSC120-A2: Object-ification
 
-This repository contains starter code for A2: Object-ification, developed for CSC120: Object-Oriented Programming as taught by Prof. R. Jordan Crouser and Prof. Johanna Brewer at Smith College in Spring 2024.
+This repository contains starter code for A2: Object-ification, developed for CSC120: Object-Oriented Programming as taught by Prof. R. Jordan Crouser and Prof. Ab Mosca at Smith College in Spring 2025.
   
  `procedural_resale_shop.py` contains a procedural program to perform the basic functions of a computer resale store:
    - buying a computer (add to inventory)
