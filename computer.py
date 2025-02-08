@@ -22,10 +22,7 @@ class Computer:
         self.year_made = year
         self.price = amt
 
-
-        #pass # You'll remove this when you fill out your constructor
-
     # What methods will you need?
 
-    def update_os(self):
-        pass
+    def update_os(self, new_os: str):
+        self.operating_system = new_os
