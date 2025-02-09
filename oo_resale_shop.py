@@ -8,7 +8,7 @@ class ResaleShop:
 
     # How will you set up your constructor?
     # Remember: in python, all constructors have the same name (__init__)
-    def __init__():
+    def __init__(self):
         pass # You'll remove this when you fill out your constructor
 
     # What methods will you need?s
@@ -26,8 +26,9 @@ class ResaleShop:
         pass
 
     
-    def update_price(self,price:int):
-        pass
+    def update_price(self,new_amt:int):
+        self.price = new_amt
+        
 
     
 
