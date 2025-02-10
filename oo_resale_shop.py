@@ -33,8 +33,11 @@ class ResaleShop:
         pass
 
     #Update the price of the computer 
-    def update_price(self, new_amt:int):
-        self.price = new_amt
+    def update_price(self, item_id: int, new_price: int):
+        if self.inventory[item_id] is not None:
+            self.inventory[item_id].update_price1(new_price)
+        else:
+            print("Item", item_id, "not found. Cannot update price.")
         
 
 
@@ -42,4 +45,19 @@ class ResaleShop:
         pass
     
 
+    def print_inventory(self):
+    # If the inventory is not empty
+        if self.inventory:
+            # For each item
+            for item in self.inventory:
+                # Print its details
+                print(f'Item ID: {self.inventory.index(item)} : {item.description}, ')
+        else:
+            print("No inventory to display.")
+
     
+if __name__ == "__main__": 
+    shop = ResaleShop()
+    shop.buy("good", "fast", 2, 15, "mac", 2000, 50)
+    shop.print_inventory()
+    shop.update_price(0, 2)
