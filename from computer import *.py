@@ -13,10 +13,16 @@ class ResaleShop:
     def __init__(self):
         self.inventory = []
 
+    # What methods will you need?s
 
-    # takes in a new computer instance and adds it to the inventory
-    def buy(self, description: str, processor: str, hard_drive_capacity: int, memory: int, operating_system: str, year_made: int, price: int):   
+    def buy(self, description: str, processor: str, hard_drive_capacity: int, memory: int, operating_system: str, year_made: int, price: int):
+        # 1. call Comp(...) construtor to
+        # create new comp instance
+        
         new_computer = Computer(description, processor, hard_drive_capacity, memory, operating_system, year_made, price)
+
+        # 2. call inventory.append(..) to add the 
+        # new Computer instance to the inventory
         self.inventory.append(new_computer)
 
     
@@ -83,7 +89,3 @@ if __name__ == "__main__":
      shop.print_inventory()
      shop.refurbish(0, "lux")
      shop.print_inventory()
-
-
-
-
