@@ -1,6 +1,5 @@
 class Computer:
 
-    # What attributes will it need?
 
     description: str
     processor_type: str
@@ -20,6 +19,6 @@ class Computer:
         self.year_made = year_made
         self.price = price
 
-
+    # updates price method 
     def update_price1(self, new_price: int):
         self.price = new_price

@@ -66,20 +66,20 @@ class ResaleShop:
         else:
             print("No inventory to display.")
 
-    
-if __name__ == "__main__": 
-     shop = ResaleShop()
-     shop.buy("good", "fast", 2, 15, "mac", 2000, 50)
-     shop.print_inventory()
-     shop.sell(0)
-     shop.print_inventory()
-     shop.buy("good", "fast", 2, 15, "mac", 2000, 50)
-     shop.print_inventory()
-     shop.update_price(0, 100)
-     shop.print_inventory()
-     shop.refurbish(0, "lux")
-     shop.print_inventory()
 
+# uncomment to check program. it does run!! 
+# if __name__ == "__main__": 
+#      shop = ResaleShop()
+#      shop.buy("good", "fast", 2, 15, "mac", 2000, 50)
+#      shop.print_inventory()
+#      shop.sell(0)
+#      shop.print_inventory()
+#      shop.buy("good", "fast", 2, 15, "mac", 2000, 50)
+#      shop.print_inventory()
+#      shop.update_price(0, 100)
+#      shop.print_inventory()
+#      shop.refurbish(0, "lux")
+#      shop.print_inventory()
 
 
 
