@@ -31,7 +31,7 @@ class ResaleShop:
     # Updates the price of the computer 
     def update_price(self, item_id: int, new_price: int):
         if self.inventory[item_id] is not None:
-            self.inventory[item_id].update_price1(new_price)
+            self.inventory[item_id].update_price1(new_price) # calls update_price1 method from computer 
         else:
             print("Item", item_id, "not found. Cannot update price.")
         
