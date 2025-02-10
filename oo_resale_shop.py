@@ -4,12 +4,8 @@ from typing import Optional
 
 class ResaleShop:
 
-    # What attributes will it need?
-
     inventory = []
 
-    # How will you set up your constructor?
-    # Remember: in python, all constructors have the same name (__init__)
     def __init__(self):
         self.inventory = []
 
@@ -20,7 +16,7 @@ class ResaleShop:
         self.inventory.append(new_computer)
 
     
-    #remove a computer from the inventory 
+    # Removes a computer from the inventory 
     def sell(self, item_id: int):
         if self.inventory[item_id] is not None:
             self.inventory.pop(item_id)
@@ -32,7 +28,7 @@ class ResaleShop:
 
         
 
-    #Update the price of the computer 
+    # Updates the price of the computer 
     def update_price(self, item_id: int, new_price: int):
         if self.inventory[item_id] is not None:
             self.inventory[item_id].update_price1(new_price)
@@ -40,7 +36,8 @@ class ResaleShop:
             print("Item", item_id, "not found. Cannot update price.")
         
 
-
+    # checks the age of the computer and discounts accordingly
+    # checks and updates the operating system
     def refurbish(self, item_id: int, new_os: Optional[str] = None):
         if self.inventory[item_id] is not None:
             computer = self.inventory[item_id] # locate the computer
@@ -58,7 +55,7 @@ class ResaleShop:
         else:
             print("Item", item_id, "not found. Please select another item to refurbish.")
     
-
+    # prints the inventory
     def print_inventory(self):
     # If the inventory is not empty
         if self.inventory:
