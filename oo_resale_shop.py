@@ -20,9 +20,8 @@ class ResaleShop:
         self.inventory.append(new_computer)
 
     
-
+    #remove a computer from the inventory 
     def sell(self, item_id: int):
-        #remove a computer from the inventory 
         if self.inventory[item_id] is not None:
             self.inventory.pop(item_id)
             print("Item", item_id, "sold!")
