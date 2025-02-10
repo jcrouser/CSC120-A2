@@ -11,16 +11,10 @@ class ResaleShop:
     def __init__(self):
         self.inventory = []
 
-    # What methods will you need?s
 
-    def buy(self, description: str, processor: str, hard_drive_capacity: int, memory: int, operating_system: str, year_made: int, price: int):
-        # 1. call Comp(...) construtor to
-        # create new comp instance
-        
+    # takes in a new computer instance and adds it to the inventory
+    def buy(self, description: str, processor: str, hard_drive_capacity: int, memory: int, operating_system: str, year_made: int, price: int):   
         new_computer = Computer(description, processor, hard_drive_capacity, memory, operating_system, year_made, price)
-
-        # 2. call inventory.append(..) to add the 
-        # new Computer instance to the inventory
         self.inventory.append(new_computer)
 
     
@@ -33,7 +27,7 @@ class ResaleShop:
             print("Item", item_id, "not found. Please select another item to sell.")
 
 
-    #Update the price of the computer 
+    # Update the price of the computer 
     def update_price(self, item_id: int, new_price: int):
         if self.inventory[item_id] is not None:
             self.inventory[item_id].update_price1(new_price)
@@ -41,7 +35,7 @@ class ResaleShop:
             print("Item", item_id, "not found. Cannot update price.")
         
 
-
+    # checks to see when computer was manufactured, gives a discount depending on the age
     def refurbish(self, item_id:int):
         if self.inventory[item_id] is not None:
             computer = self.inventory[item_id] # locate the computer
