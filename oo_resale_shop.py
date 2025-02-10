@@ -25,12 +25,17 @@ class ResaleShop:
 
     
 
-    def sell(self):
+    def sell(self, item_id: int):
         #remove a computer from the inventory 
+        if self.inventory[item_id] is not None:
+            self.inventory.pop(item_id)
+            print("Item", item_id, "sold!")
+        else: 
+            print("Item", item_id, "not found. Please select another item to sell.")
 
 
 
-        pass
+        
 
     #Update the price of the computer 
     def update_price(self, item_id: int, new_price: int):
@@ -41,8 +46,22 @@ class ResaleShop:
         
 
 
-    def refurbish(self):
-        pass
+    def refurbish(self, item_id: int, new_os: Optional[str] = None):
+        if self.inventory[item_id] is not None:
+            computer = self.inventory[item_id] # locate the computer
+            if int(computer["year_made"]) < 2000:
+                computer["price"] = 0 # too old to sell, donation only
+            elif int(computer["year_made"]) < 2012:
+                computer["price"] = 250 # heavily-discounted price on machines 10+ years old
+            elif int(computer["year_made"]) < 2018:
+                computer["price"] = 550 # discounted price on machines 4-to-10 year old machines
+            else:
+                computer["price"] = 1000 # recent stuff
+
+            if new_os is not None:
+                computer["operating_system"] = new_os # update details after installing new OS
+        else:
+            print("Item", item_id, "not found. Please select another item to refurbish.")
     
 
     def print_inventory(self):
@@ -56,8 +75,8 @@ class ResaleShop:
             print("No inventory to display.")
 
     
-if __name__ == "__main__": 
-    shop = ResaleShop()
-    shop.buy("good", "fast", 2, 15, "mac", 2000, 50)
-    shop.print_inventory()
-    shop.update_price(0, 2)
+# if __name__ == "__main__": 
+#     shop = ResaleShop()
+#     shop.buy("good", "fast", 2, 15, "mac", 2000, 50)
+#     shop.print_inventory()
+#     shop.update_price(0, 2)
