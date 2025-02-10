@@ -1,4 +1,6 @@
 from computer import *
+from typing import Optional
+
 
 class ResaleShop:
 
@@ -49,17 +51,17 @@ class ResaleShop:
     def refurbish(self, item_id: int, new_os: Optional[str] = None):
         if self.inventory[item_id] is not None:
             computer = self.inventory[item_id] # locate the computer
-            if int(computer["year_made"]) < 2000:
-                computer["price"] = 0 # too old to sell, donation only
-            elif int(computer["year_made"]) < 2012:
-                computer["price"] = 250 # heavily-discounted price on machines 10+ years old
-            elif int(computer["year_made"]) < 2018:
-                computer["price"] = 550 # discounted price on machines 4-to-10 year old machines
+            if int(computer.year_made) < 2000:
+                computer.update_price(0) # too old to sell, donation only
+            elif int(computer.year_made) < 2012:
+                computer.update_price1(250) # heavily-discounted price on machines 10+ years old
+            elif int(computer.year_made) < 2018:
+                computer.update_price(550) # discounted price on machines 4-to-10 year old machines
             else:
-                computer["price"] = 1000 # recent stuff
+                computer.update_price(1000) # recent stuff
 
             if new_os is not None:
-                computer["operating_system"] = new_os # update details after installing new OS
+                computer.operating_system = new_os # update details after installing new OS
         else:
             print("Item", item_id, "not found. Please select another item to refurbish.")
     
@@ -70,13 +72,24 @@ class ResaleShop:
             # For each item
             for item in self.inventory:
                 # Print its details
-                print(f'Item ID: {self.inventory.index(item)} : {item.description}, ')
+                print(f'Item ID: {self.inventory.index(item)} : {item.description}, {item.processor_type}, {item.hard_drive_capacity}, {item.memory}, {item.operating_system}, {item.year_made}, {item.price}  ')
         else:
             print("No inventory to display.")
 
     
-# if __name__ == "__main__": 
-#     shop = ResaleShop()
-#     shop.buy("good", "fast", 2, 15, "mac", 2000, 50)
-#     shop.print_inventory()
-#     shop.update_price(0, 2)
+if __name__ == "__main__": 
+     shop = ResaleShop()
+     shop.buy("good", "fast", 2, 15, "mac", 2000, 50)
+     shop.print_inventory()
+     shop.sell(0)
+     shop.print_inventory()
+     shop.buy("good", "fast", 2, 15, "mac", 2000, 50)
+     shop.print_inventory()
+     shop.update_price(0, 100)
+     shop.print_inventory()
+     shop.refurbish(0, "lux")
+     shop.print_inventory()
+
+
+
+

@@ -25,8 +25,8 @@ class Computer:
     # What methods will you need?
 
     #Update operating system of the computer 
-    def update_os(self, new_os: str):
-        self.operating_system = new_os
+    #def update_os(self, new_os: str):
+    #    self.operating_system = new_os
 
     def update_price1(self, new_price: int):
         self.price = new_price
