@@ -22,7 +22,9 @@ class Computer:
         self.year_made = year
         self.price = amt
 
+
     # What methods will you need?
 
     def update_os(self, new_os: str):
         self.operating_system = new_os
+        
